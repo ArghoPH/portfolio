@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Details - Argho Chakma</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 pt-24 font-sans">
+
+<!-- NAVBAR -->
+<nav class="fixed top-0 w-full bg-white shadow-md z-50 px-8 py-5 flex justify-between items-center">
+    <a href="/index.html" class="text-xl font-semibold">Argho Chakma</a>
+    <ul class="flex gap-8 list-none">
+        <li><a href="index.html#home" class="text-gray-600 font-medium hover:text-indigo-600">Home</a></li>
+        <li><a href="index.html#about" class="text-gray-600 font-medium hover:text-indigo-600">About</a></li>
+        <li><a href="portfolio.html" class="text-indigo-600 font-semibold">Portfolio</a></li>
+        <li><a href="index.html#services" class="text-gray-600 font-medium hover:text-indigo-600">Services</a></li>
+        <li><a href="index.html#contact" class="text-gray-600 font-medium hover:text-indigo-600">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="text-center py-16 px-5">
+    <h1 class="text-3xl md:text-4xl font-bold">ERP Dashboard Design</h1>
+    <p class="text-gray-600 mt-2">A modern ERP dashboard that centralizes business data, KPIs, and analytics into a single, intuitive interface for managers and employees.</p>
+</div>
+
+<!-- PROJECT DETAILS -->
+<div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-10 px-5 mb-16">
+
+<!-- Image Slider -->
+<div class="flex-1 relative">
+    <!-- Images Container -->
+    <div id="slider" class="overflow-hidden rounded-xl shadow-lg relative h-[400px]">
+        <img src="/img/erpdashboard/erpdashboard.png" class="w-full h-full object-cover absolute transition-opacity duration-700 opacity-100">
+        <img src="/img/erpdashboard/Homepage Dashboard (1).png" class="w-full h-full object-cover absolute transition-opacity duration-700 opacity-0">
+    </div>
+
+    <!-- Prev/Next Buttons Below Image -->
+    <div class="flex justify-center gap-4 mt-4">
+        <button id="prev" class="bg-gray-800 bg-opacity-50 text-white px-4 py-2 rounded-full hover:bg-opacity-80 transition">❮ Prev</button>
+        <button id="next" class="bg-gray-800 bg-opacity-50 text-white px-4 py-2 rounded-full hover:bg-opacity-80 transition">Next ❯</button>
+    </div>
+</div>
+
+<!-- Zoom Modal -->
+<div id="zoomModal" class="fixed inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center hidden z-50 p-4">
+    <span id="closeZoom" class="absolute top-5 right-8 text-white text-3xl cursor-pointer font-bold">&times;</span>
+
+    <!-- Zoom Image Container -->
+    <div class="flex flex-col items-center">
+        <img id="zoomImg" src="" class="max-h-[80vh] max-w-[90vw] rounded-lg shadow-lg">
+
+        <!-- Zoom Prev/Next Buttons Below Image -->
+        <div class="flex gap-4 mt-4">
+            <button id="zoomPrev" class="bg-gray-800 bg-opacity-50 text-white px-4 py-2 rounded-full hover:bg-opacity-80 transition">❮ Prev</button>
+            <button id="zoomNext" class="bg-gray-800 bg-opacity-50 text-white px-4 py-2 rounded-full hover:bg-opacity-80 transition">Next ❯</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <!-- Info -->
+    <div class="flex-1 space-y-6">        
+       <div>
+    <h2 class="text-2xl font-semibold mb-3">Project Overview</h2>
+    <p class="text-gray-700 leading-relaxed mb-4 text-justify">
+    ERP (Enterprise Resource Planning) software dashboard designed to provide real-time insights into sales, inventory, financial metrics, and workflow statuses. The dashboard layout and user interactions were designed in Figma, ensuring a user-friendly, responsive, and visually appealing interface for seamless interaction.
+    </p>
+    <p class="text-gray-700 leading-relaxed mb-4 text-justify">
+        This ERP dashboard allows users to monitor key metrics such as sales performance, inventory levels, financial summaries, and workflow statuses in a single interface. Each component of the dashboard, including charts, tables, and alerts, was carefully designed to ensure clarity, responsiveness, and ease of use.
+    </p>
+    <p class="text-gray-700 leading-relaxed text-justify">
+        I designed the complete dashboard layout and interactive elements in Figma, mapping user flows for data visualization, report generation, and notifications. The goal was to create a unified and user-friendly interface that enables managers and employees to make informed decisions quickly and efficiently.
+    </p>
+</div>
+<div>
+    <h2 class="text-2xl font-semibold mb-3">Technologies Used</h2>
+    <div class="flex flex-wrap gap-2">
+        <span class="bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm font-bold">Figma</span>
+        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-bold">Vue.js</span>
+        <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-bold">ASP.NET</span>
+        <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-bold">JavaScript</span>
+        <span class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-bold">HTML5</span>
+        <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-bold">CSS3</span>
+    </div>
+</div>
+
+        <a href="/portfolio.html" class="inline-block mt-4 px-5 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition">Back to Portfolio</a>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-gray-400 text-center py-5">
+    © 2026 Argho Chakma. All rights reserved.
+</footer>
+
+</body>
+</html>
+
+
+<script>
+const images = document.querySelectorAll('#slider img');
+let current = 0;
+
+// Show image function
+function showImage(index) {
+    images.forEach((img, i) => {
+        img.style.opacity = i === index ? '1' : '0';
+    });
+}
+
+// Main slider next/prev
+document.getElementById('next').addEventListener('click', () => {
+    current = (current + 1) % images.length;
+    showImage(current);
+});
+document.getElementById('prev').addEventListener('click', () => {
+    current = (current - 1 + images.length) % images.length;
+    showImage(current);
+});
+
+// Auto slide every 3 sec
+setInterval(() => {
+    current = (current + 1) % images.length;
+    showImage(current);
+}, 3000);
+
+// Zoom functionality
+const zoomModal = document.getElementById('zoomModal');
+const zoomImg = document.getElementById('zoomImg');
+
+images.forEach((img, i) => {
+    img.addEventListener('click', () => {
+        current = i;
+        zoomImg.src = img.src;
+        zoomModal.classList.remove('hidden');
+    });
+});
+
+// Close zoom
+document.getElementById('closeZoom').addEventListener('click', () => {
+    zoomModal.classList.add('hidden');
+});
+zoomModal.addEventListener('click', (e) => {
+    if(e.target.id === 'zoomModal') zoomModal.classList.add('hidden');
+});
+
+// Zoom slider buttons
+document.getElementById('zoomNext').addEventListener('click', (e) => {
+    e.stopPropagation();
+    current = (current + 1) % images.length;
+    zoomImg.src = images[current].src;
+});
+document.getElementById('zoomPrev').addEventListener('click', (e) => {
+    e.stopPropagation();
+    current = (current - 1 + images.length) % images.length;
+    zoomImg.src = images[current].src;
+});
+</script>

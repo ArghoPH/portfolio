@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creative Frontend Developer</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-poppins bg-gray-50 text-gray-800">
+
+<!-- NAVBAR -->
+<nav class="bg-white shadow-md sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6">
+    <h3 class="text-2xl font-bold text-gray-800">Argho Chakma</h3>
+    <ul class="flex space-x-6">
+      <li><a href="#home" class="hover:text-blue-500">Home</a></li>
+      <li><a href="#about" class="hover:text-blue-500">About</a></li>
+      <li><a href="#services" class="hover:text-blue-500">Services</a></li>
+      <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
+      <li><a href="mywork.html" class="hover:text-blue-500">Portfolio</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto px-6 py-16 gap-8">
+  <div class="flex-1 text-center md:text-left">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">Creative <span class="text-blue-500">Frontend Developer</span> & UI/UX Designer</h1>
+    <p class="text-gray-600 mb-6">I craft beautiful, user-centered digital experiences that bridge the gap between design and functionality.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+      <a href="mywork.html"><button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg transition">View My Work</button></a>
+      <button class="border border-blue-500 text-blue-500 hover:bg-blue-50 font-semibold px-6 py-3 rounded-lg transition">Download CV</button>
+    </div>
+  </div>
+  <div class="flex-1">
+    <img src="https://via.placeholder.com/280" alt="Profile" class="rounded-xl mx-auto md:mx-0">
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="max-w-7xl mx-auto px-6 py-16">
+  <div class="text-center mb-12">
+    <h2 class="text-3xl font-bold mb-2">About Me</h2>
+    <p class="text-gray-600">Passionate about creating digital experiences that make a difference</p>
+  </div>
+
+  <div class="flex flex-col md:flex-row gap-12">
+<!-- Left Section - Modern Styled -->
+<div class="flex-1 space-y-6 p-6 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white rounded-2xl shadow-2xl">
+  <!-- Intro -->
+  <p class="text-lg md:text-xl font-medium tracking-wide">
+    With over <span class="font-bold  text-yellow-400">1 year</span> of experience in <span class="font-bold decoration-yellow-300 text-yellow-400">Frontend Development</span> and <span class="font-bold text-yellow-300">UI/UX design</span>.
+  </p>
+
+  <!-- Stats -->
+  <div class="flex gap-6 mt-4">
+    <!-- Projects -->
+    <div class="flex-1 bg-white bg-opacity-20 rounded-xl p-4 flex flex-col items-center justify-center hover:bg-opacity-40 transition">
+      <h3 class="text-3xl md:text-4xl font-extrabold text-yellow-300">12+</h3>
+      <p class="text-white text-sm md:text-base mt-1">Projects Completed</p>
+    </div>
+
+    <!-- Experience -->
+    <div class="flex-1 bg-white bg-opacity-20 rounded-xl p-4 flex flex-col items-center justify-center hover:bg-opacity-40 transition">
+      <h3 class="text-3xl md:text-4xl font-extrabold text-yellow-300">1+</h3>
+      <p class="text-white text-sm md:text-base mt-1">Years Experience</p>
+    </div>
+  </div>
+</div>
+
+    <!-- Right -->
+    <div class="flex-1 space-y-4">
+      <div>
+        <label class="flex justify-between">Frontend Development <span>95%</span></label>
+        <div class="w-full bg-gray-200 rounded-full h-3 mt-1">
+          <div class="bg-blue-500 h-3 rounded-full" style="width:95%"></div>
+        </div>
+      </div>
+      <div>
+        <label class="flex justify-between">UI/UX Design <span>90%</span></label>
+        <div class="w-full bg-gray-200 rounded-full h-3 mt-1">
+          <div class="bg-purple-500 h-3 rounded-full" style="width:90%"></div>
+        </div>
+      </div>
+      <div>
+        <label class="flex justify-between">Vue.js <span>88%</span></label>
+        <div class="w-full bg-gray-200 rounded-full h-3 mt-1">
+          <div class="bg-green-500 h-3 rounded-full" style="width:88%"></div>
+        </div>
+      </div>
+      <div>
+        <label class="flex justify-between">Figma <span>85%</span></label>
+        <div class="w-full bg-gray-200 rounded-full h-3 mt-1">
+          <div class="bg-pink-500 h-3 rounded-full" style="width:85%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="max-w-7xl mx-auto px-6 py-16">
+  <div class="text-center mb-12">
+    <h2 class="text-3xl font-bold mb-2">My Projects</h2>
+    <p class="text-gray-600">A showcase of my recent work</p>
+  </div>
+
+  <!-- Filter Buttons -->
+  <div class="filters flex justify-center gap-4 mb-8">
+    <button class="bg-blue-500 text-white px-4 py-2 rounded-lg active" data-filter="all">All</button>
+    <button class="bg-gray-200 px-4 py-2 rounded-lg hover:bg-gray-300" data-filter="Web Design">Web Design</button>
+    <button class="bg-gray-200 px-4 py-2 rounded-lg hover:bg-gray-300" data-filter="Mobile App">Mobile App</button>
+    <button class="bg-gray-200 px-4 py-2 rounded-lg hover:bg-gray-300" data-filter="Branding">Branding</button>
+  </div>
+
+  <!-- Projects Grid -->
+  <div class="grid md:grid-cols-3 sm:grid-cols-1 gap-6">
+    <!-- Card 1 -->
+    <div class="project-card bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition" data-category="Mobile App">
+      <img src="https://via.placeholder.com/400x180" alt="Mobile App" class="w-full h-40 object-cover rounded-lg mb-4">
+      <h3 class="text-lg font-semibold mb-2">Mobile Application Design</h3>
+      <p class="text-gray-600 mb-4">Modern e-commerce solution with seamless user experience.</p>
+      <div class="flex flex-wrap gap-2 mb-4">
+        <span class="text-purple-500 text-sm">Figma</span>
+        <span class="text-purple-500 text-sm">Wireframing</span>
+        <span class="text-green-500 text-sm">User Flow</span>
+        <span class="text-green-500 text-sm">Responsive</span>
+      </div>
+      <a href="/projects/mobileapp.html" class="text-purple-500 font-medium hover:underline">View Project →</a>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="project-card bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition" data-category="Web Design">
+      <img src="/img/erpdashboard/erpdashboard.png" alt="ERP App" class="w-full h-40 object-cover rounded-lg mb-4">
+      <h3 class="text-lg font-semibold mb-2">ERP Software Design</h3>
+      <p class="text-gray-600 mb-4">Intuitive mobile banking experience with focus on security and usability.</p>
+      <div class="flex flex-wrap gap-2 mb-4">
+        <span class="text-blue-500 text-sm">Vue.js</span>
+        <span class="text-orange-500 text-sm">JavaScript</span>
+        <span class="text-emerald-500 text-sm">HTML5</span>
+        <span class="text-purple-500 text-sm">CSS3</span>
+      </div>
+      <a href="/projects/erp.html" class="text-orange-500 font-medium hover:underline">View Project →</a>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="project-card bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition" data-category="Branding">
+      <img src="/img/erpdashboard/Homepage Dashboard (1).png" alt="ERP Dashboard" class="w-full h-40 object-cover rounded-lg mb-4">
+      <h3 class="text-lg font-semibold mb-2">ERP Dashboard</h3>
+      <p class="text-gray-600 mb-4">Comprehensive analytics dashboard with real-time data visualization.</p>
+      <div class="flex flex-wrap gap-2 mb-4">
+        <span class="text-purple-400 text-sm">ASP.NET</span>
+        <span class="text-blue-400 text-sm">Vue.js</span>
+        <span class="text-green-400 text-sm">JavaScript</span>
+      </div>
+      <a href="/projects/erpdashboard.html" class="text-red-500 font-medium hover:underline">View Project →</a>
+    </div>
+  </div>
+
+  <div class="text-center mt-8">
+    <a href="mywork.html">
+      <button class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg transition">View All Projects</button>
+    </a>
+  </div>
+
+  <!-- Filter JS -->
+  <script>
+    const filterButtons = document.querySelectorAll('.filters button');
+    const projects = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active from all buttons
+        filterButtons.forEach(b => b.classList.remove('bg-blue-500', 'text-white'));
+        filterButtons.forEach(b => b.classList.add('bg-gray-200', 'text-black', 'hover:bg-gray-300'));
+
+        // Set active button
+        btn.classList.add('bg-blue-500', 'text-white');
+        btn.classList.remove('bg-gray-200', 'text-black', 'hover:bg-gray-300');
+
+        // Filter projects
+        const filter = btn.dataset.filter;
+        projects.forEach(project => {
+          if(filter === 'all' || project.dataset.category === filter){
+            project.classList.remove('hidden');
+          } else {
+            project.classList.add('hidden');
+          }
+        });
+      });
+    });
+  </script>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="py-16 px-6 text-center">
+  <h2 class="text-3xl font-bold mb-2">Services</h2>
+  <p class="text-gray-600 mb-12">Comprehensive digital solutions tailored to your needs</p>
+
+  <div class="grid md:grid-cols-3 gap-6 max-w-7xl mx-auto">
+    <!-- Card 1 -->
+    <div class="bg-blue-50 p-8 rounded-lg shadow hover:shadow-lg transition">
+      <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center bg-blue-500 text-white rounded-full">
+        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64"><image width="64" height="64" xlink:href="data:image/png;base64,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"/></svg>
+      </div>
+      <h3 class="text-xl font-semibold mb-2">Frontend Development</h3>
+      <p class="text-gray-600 text-sm">Modern, responsive web applications built with the latest technologies and best practices.</p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="bg-purple-50 p-8 rounded-lg shadow hover:shadow-lg transition">
+        <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center bg-green-500 text-white rounded-full">
+        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64"><image width="64" height="64" xlink:href="data:image/png;base64,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"/></svg>
+      </div>
+      
+      <h3 class="text-xl font-semibold mb-2">UI/UX Design</h3>
+      <p class="text-gray-600 text-sm">User-centered design solutions that enhance engagement and drive conversions.</p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="bg-green-50 p-8 rounded-lg shadow hover:shadow-lg transition">
+      <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center bg-purple-500 text-white rounded-full">
+        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64"><image width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAUzSURBVHgB7Zs/TBtXHMe/792BUohUR4qhS5RLG6amDdloOuBIqWSTIYElHYCYrRt0a4YIkCo1W6BbJ8CkUqeaDAlRWwlnaVkqnP6ZQisjFjCVckg1g43v5ffO2NjJHfjfGfsuH8m6w/ds8/u97++93/vH4DC+uaDWpiAAxnoZcJ6uGoTwAXQtQSTomU7PEjDYczART2dFXB97moCDMDjA2blggKnsFn35zTcNrZiEAGICxsJ/I09jqDN1c4BvLuBrVzvGBdgEg6xhR0gIxqYymeyzeimjZgc0yPAS6Ld0MGM+kxGztTqiJgf4F0PjAJ9qlOEWmIrYGX68gCqpygFmw6ayOQYWQHOQSO8b16pRA0eFyFpvU5W1JjJeorWrfK07EppAhSiVFPZHbjxgDCR5nELzcYq60WDnUA9S0RfPyv1Q2SHQtTgwR5cwWgDqNud3Rp6MlVO2LAd0PRxYo2/tRSvBEE8OP7lyXLFj2wCz5lvNeAn9z/6cao/kSAd0fT8wiRaRvRUk77D/YejBUWVsG0HZ2jPB7qPFod6q7/Tgxd1UdH3V+rkFuX5ednUnluDUG53yhCtWeYJlCFCfuuIi4yU+mbhZPXjDAf7IQJguGlyGTNysEqWSEJDSl7UPFzrgAAqFvQv6WEzPv1GigDZFocGNa42X+Np5R4kKCgrIzdxQw8dcFftWlKhAzb/bpvCAE8afO92Nbz/5Ele7P6roc8ubq7j3+3fY/D+JOpNXwZT8oxACNMiZhANEr39TsfGS0Lk+zPffgyNwjB/eEmcXgwE4EPvScKmAarl05n18SC8H8B3YnAsByvjCzkyPHvLr9h8Y/PluWWV//Ow+Pj1QzbvtnXAC6hZv0SVmKoAx1g+PQQ64Ka9ctv5wd9dnh/Ye2c4VhbXeULdOZKnn44rwrgOo8evlBsdleBQuhMap/9fgUWiB5TxnAm5Pfe1hzCe7QQ3eRat4YcRtvHUAPI50QALeJcEFgw6vIoROuYB3FUAz3xsqM7DRiJbgavfH2B5+jGZCCB7nchERJ8QP//xivk4KpmbXVCVrxAy18Z2BNHz8t8Nlu88/uI5Gw9LsOd/KLRcl4AC76ZTtM2Zz3zCESEjbzSkxYeARK5oorBd/v/wXf9HrksW83u2iGr9tU/ubqW2aSvsTjsBYTF5M7QtuLMEhwrGvzSluK6Thdsabc4g/fQWnMGCYO8sK6vNHbrz0wKJIDpJ/cnT5grwtWhcQs/AIgoup/H3BAen99hkhmBeyQl3JoLCLrOAAfWxJ94IKBMTCVtFGiZIEwPUqoNhX9sVM8VslDpAqEDCm4VJk7G+9tk3GMgfxL4ZWmmwrbO0UtfzFWObAJJMxN4UCjXh1nhXXrJ5ZOkDKxE2hwLmY3rLZSW67T3Avur7aMdRzhmKkD62MgWmSvu1+x2PHIV2R0DxlSXfQigixQMaHjypS1kDMHxlYoxWk1lpDFIgnR+uwWVqyI7+IvIlWwaz5442XlH1gIhVdX+oc6pGKCaCJoUxvdmd0+Ytyy1d0YiQVfRF7Z/DiLgmnj0KiqU6NmF0dF3eTI8tTlXyuqskYubPCUNiKeQq0CaBaj8ncZauKQ1O1HZuLBMOUMU6elCMOan16e3h5BlVS83ScVENW5RNUDXcoLBpzcJIMp9+aTe/vzRTv+62Gus1Hmo5QEHBSEfU0PI8zh6cXgwEu9x4C/bU7Q8jD048ozpea+vC0HVIZGYX1mpuxOC5TLWq5uUemlZYkQ2kARjVMBosNqu54JouY08fnXwEuYuYZ3LRqBQAAAABJRU5ErkJggg=="/></svg>
+      </div>
+      <h3 class="text-xl font-semibold mb-2">Mobile App Design</h3>
+      <p class="text-gray-600 text-sm">Native and cross-platform mobile applications with intuitive user experiences.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-16 px-6 bg-white">
+  <div class="text-center mb-12">
+    <h2 class="text-3xl font-bold mb-2">Let's Work Together</h2>
+    <p class="text-gray-600">Ready to bring your project to life?</p>
+  </div>
+
+  <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+    <div class="space-y-4 text-gray-700">
+      <p><span class="font-semibold">Email:</span> alex.chen@email.com</p>
+      <p><span class="font-semibold">Phone:</span> +1 (555) 123-4567</p>
+      <p><span class="font-semibold">Location:</span> San Francisco, CA</p>
+    </div>
+    <div class="flex flex-col gap-4">
+      <input type="text" placeholder="Your Name" class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+      <input type="email" placeholder="Your Email" class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+      <input type="text" placeholder="Subject" class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+      <textarea rows="4" placeholder="Your Message" class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+      <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg transition">Send Message</button>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-gray-800 text-gray-200 py-6 text-center">
+  © 2026 Argho Chakma. All rights reserved. <br>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio - Argho Chakma</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/mywork.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <a href="index.html"><h3>Argho Chakma</h3></a>
+    <ul>
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="portfolio.html" class="active">Portfolio</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+    <h1>My Portfolio</h1>
+    <p>A collection of my recent design and development work</p>
+</div>
+
+<!-- FILTERS -->
+<div class="filters">
+    <button class="active" onclick="filterProjects('all')">All</button>
+    <button onclick="filterProjects('Web Design')">Web Design</button>
+    <button onclick="filterProjects('UI/UX')">UI/UX</button>
+    <button onclick="filterProjects('Mobile App')">Mobile App</button>
+</div>
+
+<!-- PORTFOLIO GRID -->
+<div class="portfolio-grid" id="portfolioGrid">
+
+    <div class="portfolio-card" data-category="Web Design">
+        <img src="https://via.placeholder.com/400x300">
+        <div class="portfolio-content">
+            <h3>ERP Dashboard</h3>
+            <p>Comprehensive analytics dashboard with real-time visualization.</p>
+            <div class="tags">
+                <span>Vue.js</span>
+                <span>ASP.NET</span>
+            </div>
+            <a href="projects/erp.html" class="btn">View Project</a>
+        </div>
+    </div>
+
+    <div class="portfolio-card" data-category="Mobile App">
+        <img src="https://via.placeholder.com/400x300">
+        <div class="portfolio-content">
+            <h3>Mobile App Design</h3>
+            <p>Modern e-commerce mobile application design.</p>
+            <div class="tags">
+                <span>Figma</span>
+                <span>Prototype</span>
+            </div>
+            <a href="#" class="btn">View Project</a>
+        </div>
+    </div>
+
+    <div class="portfolio-card" data-category="UI/UX">
+        <img src="https://via.placeholder.com/400x300">
+        <div class="portfolio-content">
+            <h3>ERP Software UI</h3>
+            <p>User-centered financial management system interface.</p>
+            <div class="tags">
+                <span>UI/UX</span>
+                <span>Responsive</span>
+            </div>
+            <a href="#" class="btn">View Project</a>
+        </div>
+    </div>
+
+</div>
+
+<!-- FILTER SCRIPT -->
+<script>
+function filterProjects(category){
+    const cards = document.querySelectorAll('.portfolio-card');
+    cards.forEach(card=>{
+        if(category==='all' || card.dataset.category===category){
+            card.style.display='block';
+        } else {
+            card.style.display='none';
+        }
+    });
+
+    // active button
+    document.querySelectorAll('.filters button').forEach(btn=> btn.classList.remove('active'));
+    event.target.classList.add('active');
+}
+</script>
+
+<footer>
+    © 2026 Argho Chakma. All rights reserved.
+</footer>
+
+</body>
+</html>

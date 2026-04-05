@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="bn" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>শক্তি ফাউন্ডেশন - সঞ্চয় ও ঋণ সহায়তা</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Hind Siliguri', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#0B4A6F',
+                            green: '#059669',
+                            yellow: '#F59E0B'
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out 3s infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+
+        html{
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background-color: #f8fafc;
+        }
+        
+        /* Glassmorphism effects */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .faq-card:hover {
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+
+
+
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+        <!-- Navigation Bar -->
+    <nav class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-slate-200 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex items-center gap-2 cursor-pointer">
+                    <div class="bg-gradient-to-br from-orange-400 to-orange-600 text-white p-2.5 rounded-xl shadow-lg shadow-orange-200">
+                        <i class="fa-solid fa-idea text-2xl"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-extrabold text-2xl tracking-tight text-orange-600 leading-none">Argho <span class="text-orange-900">Chakma</span></span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-brand-blue font-bold hover:text-brand-green transition-colors relative group text-lg">
+                        Home
+                        <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-brand-green transform scale-x-100 transition-transform origin-left text-lg"></span>
+                    </a>
+                    <a href="#" class="text-slate-600 font-semibold hover:text-brand-green transition-colors relative group">
+                        Services
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-green group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                                                    
+                        <a href="www.shakti.org.bd"><button class="bg-brand-green hover:bg-emerald-700 text-white px-6 py-2.5 rounded-full font-bold shadow-lg shadow-emerald-200 transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+                            <i class="fa-solid fa-user text-sm"></i> Portfolio
+                        </button></a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button class="text-slate-600 hover:text-brand-blue focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Promotional Hero Section -->
+    <header class="relative bg-gradient-to-br from-brand-blue via-[#0d5c8a] to-emerald-900 overflow-hidden pb-28 md:pt-8 md:pb-36">
+        <!-- Background Pattern / Decoration -->
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 32px 32px;"></div>
+        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-brand-green rounded-full blur-[100px] opacity-40"></div>
+        <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-brand-blue rounded-full blur-[100px] opacity-60"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                
+                <!-- Left Content: Text & Search -->
+                <div class="w-full md:w-1/2 text-center md:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-emerald-300 font-semibold text-sm mb-6 shadow-sm backdrop-blur-sm">
+                        <span class="relative flex h-3 w-3">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                        </span>
+                        সর্বোচ্চ ১২% পর্যন্ত মুনাফা সুবিধা
+                    </div>
+                    
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight">
+                        আপনার নিরাপদ ভবিষ্যৎ, <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500 drop-shadow-sm">আমাদের বিশ্বস্ত হাত</span>
+                    </h1>
+                    
+                    <p class="text-lg md:text-xl text-blue-100 mb-8 max-w-lg mx-auto md:mx-0 font-light leading-relaxed">
+                        সহজ শর্তে ঋণ এবং লাভজনক সঞ্চয় স্কীমের মাধ্যমে আপনার স্বপ্ন পূরণের সারথী। আজই বিনিয়োগ করুন নিজের সুন্দর ভবিষ্যতের জন্য।
+                    </p>
+
+                    <!-- Enhanced Search Box -->
+                    <div class="relative max-w-xl mx-auto md:mx-0 group">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-emerald-400 to-sky-400 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-500"></div>
+                        <div class="relative flex items-center bg-white rounded-full shadow-xl overflow-hidden p-1 border-2 border-white focus-within:border-brand-green transition-colors">
+                            <div class="pl-4 text-slate-400">
+                                <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                            </div>
+                            <input type="text" id="searchInput" onkeyup="searchFAQ()" placeholder="স্কীম বা ঋণের নাম লিখে খুঁজুন..."
+                                class="w-full py-3 px-4 text-slate-700 bg-transparent focus:outline-none font-medium placeholder-slate-400">
+                            <button onclick="document.getElementById('searchInput').value = ''; searchFAQ()" class="pr-4 text-slate-300 hover:text-red-400 transition-colors">
+                                <i class="fa-solid fa-circle-xmark text-lg"></i>
+                            </button>
+                            <button onclick="searchFAQ(); scrollToResults()" class="bg-brand-blue hover:bg-[#093957] text-white px-6 py-3 rounded-full font-bold transition-colors ml-1 whitespace-nowrap">
+                                খুঁজুন
+                            </button>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex gap-4 justify-center md:justify-start text-sm text-blue-200 font-medium">
+                        <span>জনপ্রিয়:</span>
+                        <a href="#DPS" class="hover:text-white underline decoration-blue-400 underline-offset-4">ডিপিএস</a>
+                        <a href="#double-savings" class="hover:text-white underline decoration-blue-400 underline-offset-4">ডাবল সেভিংস</a>
+                        <a href="#loan" class="hover:text-white underline decoration-blue-400 underline-offset-4">ঋণ</a>
+                    </div>
+                </div>
+
+                        <script>
+                            function scrollToResults() {
+                            document.getElementById("faqContainer").scrollIntoView({
+                            behavior: "smooth"
+                                });
+                            }
+                        </script>
+
+                <!-- Right Content: Floating Promotional Cards -->
+                <div class="w-full md:w-1/2 relative h-[400px] hidden md:block perspective-1000">
+                    
+                    <!-- Main Image / Illustration Card -->
+                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-80 glass-card rounded-3xl p-6 shadow-2xl z-10 animate-float flex flex-col justify-center items-center text-center">
+                        <div class="w-24 h-24 bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-full flex items-center justify-center mb-6 shadow-lg shadow-yellow-500/30">
+                            <i class="fa-solid fa-piggy-bank text-5xl text-brand-blue"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">স্মার্ট সঞ্চয়</h3>
+                        <p class="text-blue-100 text-sm">আপনার কষ্টার্জিত অর্থের সর্বোচ্চ নিরাপত্তা ও লাভজনক রিটার্ন।</p>
+                    </div>
+
+                    <!-- Floating Badge 1 (Loan) -->
+                    <div class="absolute top-10 right-4 glass-card px-6 py-4 rounded-2xl shadow-xl z-20 animate-float-delayed flex items-center gap-4 transform rotate-3">
+                        <div class="bg-brand-green p-3 rounded-xl">
+                            <i class="fa-solid fa-hand-holding-dollar text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <div class="text-white font-bold">সহজ ঋণ সুবিধা</div>
+                            <div class="text-blue-200 text-xs">ব্যবসা ও ব্যক্তিগত প্রয়োজনে</div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Badge 2 (Trust) -->
+                    <div class="absolute bottom-16 left-0 glass-card px-6 py-4 rounded-2xl shadow-xl z-20 animate-float flex items-center gap-4 transform -rotate-3">
+                        <div class="bg-blue-500 p-3 rounded-xl">
+                            <i class="fa-solid fa-shield-halved text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <div class="text-white font-bold">১০০% বিশ্বস্ত</div>
+                            <div class="text-blue-200 text-xs">বাংলাদেশ সরকার অনুমোদিত</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wave Separator Bottom -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
+            <svg class="relative block w-[calc(100%+1.3px)] h-[50px] md:h-[80px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,121.22,190.61,109.52Z" class="fill-slate-50"></path>
+            </svg>
+        </div>
+    </header>
+
+
+    <!-- Main Content Section (Your existing content goes below) -->
+    <main class="max-w-7xl mx-auto p-6 relative z-10 -mt-10 md:-mt-16">
+
+        <!-- Info Banner / Callout -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 mb-12 flex flex-col md:flex-row items-center justify-between gap-6 border border-slate-100">
+            <div class="flex items-center gap-6">
+                <div class="bg-orange-100 p-4 rounded-full text-orange-500">
+                    <i class="fa-solid fa-headset text-3xl"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-slate-800">যেকোনো তথ্যের জন্য কল করুন</h3>
+                    <p class="text-slate-500">আমাদের কাস্টমার কেয়ার ২৪/৭ খোলা আছে</p>
+                </div>
+            </div>
+            <a href="tel:16xxx" class="text-2xl font-extrabold text-brand-blue hover:text-brand-green transition-colors">
+                <i class="fa-solid fa-phone mr-2"></i> ১৬XXX
+            </a>
+        </div>
+
+        <!-- Savings Schemes  -->
+        <section class="mb-10 bg-white p-6 md:p-8 rounded-2xl shadow-md border-l-8 border-brand-yellow faq-item">
+            <h2 class="text-2xl font-bold text-emerald-800 mb-6 flex items-center gap-3">
+                <i class="fa-solid fa-circle-question text-emerald-600"></i> কেন শক্তিতে সঞ্চয় করবেন?
+            </h2>
+            <ul class="grid md:grid-cols-2 gap-4 text-slate-700 font-medium">
+                <li class="flex items-center gap-3"><i class="fa-solid fa-check text-white bg-emerald-500 rounded-full p-1 text-xs"></i> ১২% পর্যন্ত সঞ্চয়ভিত্তিক মুনাফা</li>
+                <li class="flex items-center gap-3"><i class="fa-solid fa-check text-white bg-emerald-500 rounded-full p-1 text-xs"></i> কোনো কর্তন ও চার্জ ছাড়াই লভ্যাংশ</li>
+                <li class="flex items-center gap-3"><i class="fa-solid fa-check text-white bg-emerald-500 rounded-full p-1 text-xs"></i> চাহিদা মাত্র সঞ্চয় উত্তোলন সুবিধা</li>
+                <li class="flex items-center gap-3"><i class="fa-solid fa-check text-white bg-emerald-500 rounded-full p-1 text-xs"></i> একই ব্যক্তির একাধিক হিসাবের সুবিধা</li>
+                <li class="flex items-center gap-3"><i class="fa-solid fa-check text-white bg-emerald-500 rounded-full p-1 text-xs"></i> যেকোনো বয়সে হিসাব খোলার সুযোগ</li>
+                <li class="flex items-center gap-3"><i class="fa-solid fa-check text-white bg-emerald-500 rounded-full p-1 text-xs"></i> SMS নোটিফিকেশন ও ঋণ সুবিধা</li>
+                <li class="flex items-center gap-3"><i class="fa-solid fa-check text-white bg-emerald-500 rounded-full p-1 text-xs"></i> যেকোনো শাখায় স্কীম ট্রান্সফার সুবিধা</li>
+                <li class="flex items-center gap-3"><i class="fa-solid fa-check text-white bg-emerald-500 rounded-full p-1 text-xs"></i> সঞ্চয় থেকে ঋণ গ্রহণের সুবিধা</li>
+            </ul>
+        </section>
+
+      <div id="faqContainer">
+
+            <div class="faq-item bg-white p-6  rounded-3xl shadow-lg mb-8 border-2 border-transparent highlight-card">
+                <div class="flex items-center mb-6">
+                    <div class="bg-green-100 p-4 rounded-2xl mr-4">
+                        <i class="fa-solid fa-money-bill-trend-up text-3xl text-green-700"></i>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-green-800">শক্তি মাসিক মুনাফা সঞ্চয় স্কীম</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4
+                            class="font-bold text-lg mb-3 text-green-800 underline decoration-yellow-500 underline-offset-4">
+                            <i class="fa-solid fa-wand-magic-sparkles mr-2 text-green-600"></i>স্কীমের বৈশিষ্ট্যসমূহ:
+                        </h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start"><i
+                                    class="fa-solid fa-check-circle mt-1 mr-2 text-green-600"></i> ১০০,০০০ টাকায় প্রতি
+                                মাসে মুনাফা ১,০০০ টাকা।</li>
+                            <li class="flex items-start"><i
+                                    class="fa-solid fa-check-circle mt-1 mr-2 text-green-600"></i> প্রথম মাস থেকেই
+                                মুনাফা উত্তোলন করা যাবে।</li>
+                            <li class="flex items-start"><i
+                                    class="fa-solid fa-check-circle mt-1 mr-2 text-green-600"></i> সাবালক বা নাবালক যে
+                                কেউ এই স্কীমটি করতে পারবেন।</li>
+                            <li class="flex items-start"><i
+                                    class="fa-solid fa-check-circle mt-1 mr-2 text-green-600"></i> একজন ব্যক্তি একের
+                                অধিক হিসাব খুলতে পারবেন।</li>
+                            <li class="flex items-start"><i
+                                    class="fa-solid fa-check-circle mt-1 mr-2 text-green-600"></i> সর্বনিম্ন ২৫,০০০ টাকা
+                                বা এর গুণিতকে জমা করা যাবে।</li>
+                            <li class="flex items-start"><i
+                                    class="fa-solid fa-check-circle mt-1 mr-2 text-green-600"></i> কোনো প্রকার হিডেন
+                                চার্জ ছাড়াই মুনাফা প্রাপ্তি।</li>
+                            <li class="flex items-start"><i
+                                    class="fa-solid fa-check-circle mt-1 mr-2 text-green-600"></i> লিংক একাউন্টের
+                                মাধ্যমে ডিপিএস কিস্তি প্রদানের সুবিধা।</li>
+                        </ul>
+                    </div>
+                    <div class="bg-green-50 p-6 rounded-2xl border border-green-100">
+
+                        <p class="mb-2"> <i class="fa-solid fa-calendar-days mr-2 text-green-700"></i> <strong>স্কীমের
+                                মেয়াদ:</strong> ১ বছর (রিনিউ করা যাবে)</p>
+                        <table class="w-full mt-4 text-center border-collapse">
+                            <thead>
+                                <tr class="bg-green-600 text-white">
+                                    <th class="p-2 border border-green-200">জমাকৃত টাকা</th>
+                                    <th class="p-2 border border-green-200">মাসিক মুনাফা</th>
+                                    <th class="p-2 border border-green-200">হার</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-700">
+                                <tr>
+                                    <td class="p-2 border">১০০,০০০</td>
+                                    <td class="p-2 border">১,০০০ টাকা</td>
+                                    <td class="p-2 border font-bold">১২%</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 border">৫০,০০০</td>
+                                    <td class="p-2 border">৫০০ টাকা</td>
+                                    <td class="p-2 border font-bold">১২%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+<div id="double-savings"
+    class="faq-item bg-white p-5 md:p-8 rounded-2xl md:rounded-3xl shadow-lg mb-6 md:mb-8 border-2 border-transparent hover:border-blue-500 transition-all duration-300">
+    <div class="flex items-center mb-5 md:mb-6">
+        <div class="bg-blue-100 p-3 md:p-4 rounded-xl md:rounded-2xl mr-3 md:mr-4 flex-shrink-0">
+            <i class="fa-solid fa-copy text-2xl md:text-3xl text-blue-700"></i>
+        </div>
+        <h2 class="text-xl md:text-3xl font-bold text-blue-800">শক্তি ডাবল সেভিংস স্কীম</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 md:gap-8">
+        <div>
+            <h4
+                class="font-bold text-base md:text-lg mb-4 flex items-center text-blue-800 underline decoration-yellow-500 underline-offset-4">
+                <i class="fa-solid fa-wand-magic-sparkles mr-2 text-blue-600 "></i> স্কীমের বিশেষত্ব:
+            </h4>
+            <ul class="space-y-3 text-sm md:text-base">
+                <li class="flex items-start">
+                    <i class="fa-solid fa-circle-check mt-1 mr-2 text-blue-600 flex-shrink-0"></i>
+                    <span><strong>৬ বছরে</strong> আপনার জমাকৃত আসলের সমপরিমাণ মুনাফা বা টাকা দ্বিগুণ
+                        হবে।</span>
+                </li>
+                <li class="flex items-start">
+                    <i class="fa-solid fa-circle-check mt-1 mr-2 text-blue-600 flex-shrink-0"></i>
+                    <span>কোনো প্রকার <strong>হিডেন চার্জ বা কর্তন ছাড়াই</strong> পুরো মুনাফা
+                        প্রাপ্তি।</span>
+                </li>
+                <li class="flex items-start">
+                    <i class="fa-solid fa-circle-check mt-1 mr-2 text-blue-600 flex-shrink-0"></i>
+                    <span>সাবালক বা নাবালক যে কোনো ব্যক্তি এই সঞ্চয় স্কীমটি করতে পারবেন।</span>
+                </li>
+                <li class="flex items-start">
+                    <i class="fa-solid fa-circle-check mt-1 mr-2 text-blue-600 flex-shrink-0"></i>
+                    <span>একজন ব্যক্তি একের অধিক হিসাব খুলতে পারবেন।</span>
+                </li>
+                <li class="flex items-start">
+                    <i class="fa-solid fa-circle-check mt-1 mr-2 text-blue-600 flex-shrink-0"></i>
+                    <span>সর্বনিম্ন <strong>১০,০০০ টাকা</strong> থেকে শুরু করে এর গুণিতকে যে কোন পরিমাণ টাকা
+                        জমা করা যাবে।</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="bg-blue-50 p-4 md:p-6 rounded-xl md:rounded-2xl border border-blue-100 shadow-inner w-full overflow-hidden">
+            <div class="flex items-center mb-4 text-sm md:text-base text-gray-700 font-bold">
+                <i class="fa-solid fa-calendar-days mr-2 text-blue-700"></i>
+                স্কীমের মেয়াদ: ৬ (ছয়) বছর
+            </div>
+
+            <div class="overflow-x-auto w-full pb-2">
+                <table class="min-w-[400px] md:min-w-full text-center border-collapse text-xs md:text-sm">
+                    <thead>
+                        <tr class="bg-blue-700 text-white whitespace-nowrap">
+                            <th class="p-2 md:p-3 border border-blue-800 rounded-tl-lg">এককালীন জমা</th>
+                            <th class="p-2 md:p-3 border border-blue-800">মেয়াদ</th>
+                            <th class="p-2 md:p-3 border border-blue-800">মুনাফার পরিমাণ</th>
+                            <th class="p-2 md:p-3 border border-blue-800 rounded-tr-lg">মেয়াদ শেষে প্রাপ্তি</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white whitespace-nowrap">
+                        <tr class="font-bold text-blue-900 bg-blue-50">
+                            <td class="p-2 md:p-3 border border-blue-200">১,০০,০০০</td>
+                            <td class="p-2 md:p-3 border border-blue-200 text-sm md:text-base">৬ বছর</td>
+                            <td class="p-2 md:p-3 border border-blue-200">১,০০,০০০</td>
+                            <td class="p-2 md:p-3 border border-blue-200 text-sm md:text-base">২,০০,০০০</td>
+                        </tr>
+                        <tr class="text-gray-600">
+                            <td class="p-2 md:p-3 border border-blue-100">১,০০,০০০</td>
+                            <td class="p-2 md:p-3 border border-blue-100">৫ বছর</td>
+                            <td class="p-2 md:p-3 border border-blue-100">৫০,০০০</td>
+                            <td class="p-2 md:p-3 border border-blue-100">১,৫০,০০০</td>
+                        </tr>
+                        <tr class="text-gray-600">
+                            <td class="p-2 md:p-3 border border-blue-100">১,০০,০০০</td>
+                            <td class="p-2 md:p-3 border border-blue-100">৩ বছর</td>
+                            <td class="p-2 md:p-3 border border-blue-100">২৫,০০০</td>
+                            <td class="p-2 md:p-3 border border-blue-100">১,২৫,০০০</td>
+                        </tr>
+                        <tr class="text-gray-600">
+                            <td class="p-2 md:p-3 border border-blue-100">১,০০,০০০</td>
+                            <td class="p-2 md:p-3 border border-blue-100">১ বছর</td>
+                            <td class="p-2 md:p-3 border border-blue-100">৭,০০০</td>
+                            <td class="p-2 md:p-3 border border-blue-100">১,০৭,০০০</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="mt-3 text-[10px] md:text-xs text-blue-800 italic">* ৬ বছরের আগে উত্তোলন করলে সারণী অনুযায়ী মুনাফা
+                প্রদেয় হবে।</p>
+        </div>
+    </div>
+</div>
+
+<div id="DPS" class="faq-item bg-white p-5 md:p-8 rounded-2xl md:rounded-3xl shadow-lg mb-6 md:mb-8 border-2 border-transparent hover:border-orange-500 transition-all duration-300">
+    <div class="flex items-center mb-5 md:mb-6">
+        <div class="bg-orange-100 p-3 md:p-4 rounded-xl md:rounded-2xl mr-3 md:mr-4 flex-shrink-0">
+            <i class="fa-solid fa-piggy-bank text-2xl md:text-3xl text-orange-700"></i>
+        </div>
+        <h2 class="text-xl md:text-3xl font-bold text-orange-800">শক্তি ডিপিএস স্কীম</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 md:gap-8">
+        <div>
+            <h4
+                class="font-bold text-base md:text-lg mb-4 flex items-center text-orange-600 underline decoration-yellow-500 underline-offset-4">
+                <i class="fa-solid fa-wand-magic-sparkles mr-2 text-orange-600"></i> স্কীমের বিশেষত্ব:
+            </h4>
+            <ul class="space-y-3 text-sm md:text-base">
+                <li class="flex items-start">
+                    <i class="fa-solid fa-circle-check mt-1 mr-2 text-orange-600 flex-shrink-0"></i>
+                    <span>সর্বোচ্চ <strong>১১% মুনাফা</strong> হার সুবিধা।</span>
+                </li>
+                <li class="flex items-start">
+                    <i class="fa-solid fa-circle-check mt-1 mr-2 text-orange-600 flex-shrink-0"></i>
+                    <span>সাবালক বা নাবালক যে কোনো ব্যক্তি এই সঞ্চয় স্কীম টি করতে পারবেন।</span>
+                </li>
+                <li class="flex items-start">
+                    <i class="fa-solid fa-circle-check mt-1 mr-2 text-orange-600 flex-shrink-0"></i>
+                    <span>একজন ব্যক্তি একের অধিক হিসাব খুলতে পারবেন।</span>
+                </li>
+                <li class="flex items-start">
+                    <i class="fa-solid fa-circle-check mt-1 mr-2 text-orange-600 flex-shrink-0"></i>
+                    <span>আপনার সামর্থ্য অনুযায়ী যে কোন পরিমাণ টাকা জমা করা যাবে।</span>
+                </li>
+                <li class="flex items-start">
+                    <i class="fa-solid fa-circle-check mt-1 mr-2 text-orange-600 flex-shrink-0"></i>
+                    <span>কোনো প্রকার <strong>হিডেন চার্জ ছাড়াই</strong> মুনাফা প্রাপ্তি।</span>
+                </li>
+                <li class="flex items-start">
+                    <i class="fa-solid fa-circle-check mt-1 mr-2 text-orange-600 flex-shrink-0"></i>
+                    <span>মাসিক মুনাফায় প্রাপ্ত টাকা লিংক একাউন্ট এর মাধ্যমে শক্তি DPS এর কিস্তি প্রদান
+                        সুবিধা।</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="bg-orange-50 p-4 md:p-6 rounded-xl md:rounded-2xl border border-orange-100 shadow-inner w-full overflow-hidden">
+            <div class="flex items-center mb-4 text-sm md:text-base text-gray-700 font-bold">
+                <i class="fa-solid fa-calendar-days mr-2 text-orange-700"></i>
+                মেয়াদ: ২, ৩, ৫ এবং ৭ বছর
+            </div>
+
+            <div class="overflow-x-auto w-full pb-2">
+                <table class="min-w-[350px] md:min-w-full text-center border-collapse text-xs md:text-sm">
+                    <thead>
+                        <tr class="bg-orange-600 text-white whitespace-nowrap">
+                            <th class="p-2 border border-orange-700 rounded-tl-lg">মাসিক জমা</th>
+                            <th class="p-2 border border-orange-700">৩ বছর</th>
+                            <th class="p-2 border border-orange-700">৫ বছর</th>
+                            <th class="p-2 border border-orange-700 rounded-tr-lg">৭ বছর</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white whitespace-nowrap">
+                        <tr>
+                            <td class="p-2 border border-orange-100 font-bold">১০০</td>
+                            <td class="p-2 border border-orange-100">৪,১০০</td>
+                            <td class="p-2 border border-orange-100">৭,৭০০</td>
+                            <td class="p-2 border border-orange-100">১২,৪০০</td>
+                        </tr>
+                        <tr>
+                            <td class="p-2 border border-orange-100 font-bold">৫০০</td>
+                            <td class="p-2 border border-orange-100">২০,৫০০</td>
+                            <td class="p-2 border border-orange-100">৩৮,০০০</td>
+                            <td class="p-2 border border-orange-100">৬২,০০০</td>
+                        </tr>
+                        <tr>
+                            <td class="p-2 border border-orange-100 font-bold">১,০০০</td>
+                            <td class="p-2 border border-orange-100">৪১,০০০</td>
+                            <td class="p-2 border border-orange-100">৭৭,৫০০</td>
+                            <td class="p-2 border border-orange-100">১,২৪,০০০</td>
+                        </tr>
+                        <tr>
+                            <td class="p-2 border border-orange-100 font-bold">৫,০০০</td>
+                            <td class="p-2 border border-orange-100">২,০৫,০০০</td>
+                            <td class="p-2 border border-orange-100">৩,৮৫,০০০</td>
+                            <td class="p-2 border border-orange-100">৬,২০,০০০</td>
+                        </tr>
+                        <tr>
+                            <td class="p-2 border border-orange-100 font-bold">১০,০০০</td>
+                            <td class="p-2 border border-orange-100">৪,১০,০০০</td>
+                            <td class="p-2 border border-orange-100">৭,৭০,০০০</td>
+                            <td class="p-2 border border-orange-100">১২,৪০,০০০</td>
+                        </tr>
+                        <tr>
+                            <td class="p-2 border border-orange-100 font-bold">২০,০০০</td>
+                            <td class="p-2 border border-orange-100">৮,২০,০০০</td>
+                            <td class="p-2 border border-orange-100">১৫,৪০,০০০</td>
+                            <td class="p-2 border border-orange-100">২৪,৮০,০০০</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="mt-3 text-[10px] md:text-xs text-orange-800 italic text-center">উল্লিখিত অংক আনুমানিক, চূড়ান্ত
+                হিসাব শাখা থেকে নিশ্চিত করা হবে।</p>
+        </div>
+    </div>
+</div>
+
+
+
+            <!-- lakhpati scheme -->
+            <div
+                class="faq-item bg-white p-8 rounded-3xl shadow-lg mb-8 border-2 border-transparent hover:border-purple-500 transition-all duration-300">
+
+                <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
+                    <div class="flex items-center">
+                        <div class="bg-gradient-to-br from-purple-600 to-indigo-700 p-4 rounded-2xl shadow-lg mr-5">
+                            <i class="fa-solid fa-gem text-3xl text-white"></i>
+                        </div>
+                        <div>
+                            <h2
+                                class="text-3xl font-extrabold bg-gradient-to-br from-purple-600 to-indigo-700 bg-clip-text text-transparent py-2 leading-relaxed">
+                                লাখপতি স্কীম
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="bg-purple-50 px-6 py-2 rounded-full border border-purple-100 self-start md:self-center">
+                        <span class="text-purple-700 font-bold"><i class="fa-solid fa-clock mr-2"></i>মেয়াদ: ৫, ৭ ও ১০
+                            বছর</span>
+                    </div>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-8">
+                    <div class="lg:col-span-5 space-y-4">
+                        <h4
+                            class="text-xl font-bold text-gray-700 mb-4 flex items-center text-purple-800 underline decoration-yellow-500 underline-offset-4">
+                            <i class="fa-solid fa-wand-magic-sparkles mr-3 "></i> স্কীমের বিশেষত্ব
+                        </h4>
+                        <div class="grid grid-cols-1 gap-3">
+                            <div
+                               class="flex items-center p-3 bg-gray-50 rounded-xl border border-dashed border-purple-300">
+                                <i class="fa-solid fa-circle-check text-purple-600 mr-3"></i>
+                                <span class="text-gray-700 font-medium">৫ বছরে লাখপতি হওয়ার অনন্য সুযোগ</span>
+                            </div>
+                            <div class="flex items-center p-3 bg-gray-50 rounded-xl border border-dashed border-purple-300">
+                                <i class="fa-solid fa-circle-check text-purple-600 mr-3"></i>
+                                <span class="text-gray-700 font-medium">সাপ্তাহিক বা মাসিক কিস্তি জমার সুবিধা</span>
+                            </div>
+                            <div class="flex items-center p-3 bg-gray-50 rounded-xl border border-dashed border-purple-300">
+                                <i class="fa-solid fa-circle-check text-purple-600 mr-3"></i>
+                                <span class="text-gray-700 font-medium">সাবালক বা নাবালক যে কেউ খুলতে পারবেন</span>
+                            </div>
+                            <div
+                                class="flex items-center p-3 bg-gray-50 rounded-xl border border-dashed border-purple-300">
+                                <i class="fa-solid fa-shield-heart text-purple-600 mr-3"></i>
+                                <span class="text-gray-700 font-bold text-sm">কোনো প্রকার হিডেন চার্জ বা কর্তন
+                                    নেই</span>
+                            </div>
+                             <div
+                                class="flex items-center p-3 bg-gray-50 rounded-xl border border-dashed border-purple-300">
+                                <i class="fa-solid fa-shield-heart text-purple-600 mr-3"></i>
+                                <span class="text-gray-700 font-bold text-sm">যে কোন পরিমাণ টাকা জমা</span>
+                            </div>
+                             <div
+                                class="flex items-center p-3 bg-gray-50 rounded-xl border border-dashed border-purple-300">
+                                <i class="fa-solid fa-shield-heart text-purple-600 mr-3"></i>
+                                <span class="text-gray-700 font-bold text-sm">একই ব্যক্তির একাধিক হিসাবের সুবিধা</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7">
+                        <div
+                            class="bg-gradient-to-br from-purple-50 to-white p-6 rounded-2xl border border-purple-100 h-full">
+                            <h4 class="text-lg font-bold text-purple-800 mb-4 flex items-center">
+                                <i class="fa-solid fa-chart-line mr-2"></i> মুনাফার তুলনামূলক চিত্র
+                            </h4>
+                            <div class="space-y-4">
+                                <div
+                                    class="flex justify-between items-center p-4 bg-white rounded-xl shadow-sm border-l-4 border-purple-500">
+                                    <span class="font-bold text-gray-600">৫ বছরে মোট লাভ</span>
+                                    <span class="text-2xl font-black text-purple-700">১৮,৪০০৳</span>
+                                </div>
+                                <div
+                                    class="flex justify-between items-center p-4 bg-white rounded-xl shadow-sm border-l-4 border-indigo-500">
+                                    <span class="font-bold text-gray-600">১০ বছরে মোট লাভ</span>
+                                    <span class="text-2xl font-black text-indigo-700">৩৭,৬০০৳</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-10 overflow-hidden rounded-2xl border border-gray-200 shadow-lg">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-center border-collapse">
+                            <thead>
+                                <tr class="bg-purple-700 text-white">
+                                    <th class="p-4 border-r border-purple-600 font-bold whitespace-nowrap">মেয়াদ</th>
+                                    <th class="p-4 border-r border-purple-600 font-bold whitespace-nowrap">কিস্তি সংখ্যা
+                                        (সাপ্তাহিক/মাসিক)</th>
+                                    <th class="p-4 border-r border-purple-600 font-bold whitespace-nowrap">সাপ্তাহিক জমা
+                                    </th>
+                                    <th class="p-4 border-r border-purple-600 font-bold bg-purple-800 whitespace-nowrap">
+                                        মাসিক জমা</th>
+                                    <th class="p-4 border-r border-purple-600 font-bold whitespace-nowrap">মেয়াদ শেষে
+                                        মোট জমা</th>
+                                    <th class="p-4 border-r bg-purple-600 font-bold whitespace-nowrap text-white-300">
+                                        লাভের পরিমাণ</th>
+                                    <th class="p-4 font-bold bg-purple-800 whitespace-nowrap">মেয়াদ শেষে প্রাপ্তি</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-700 font-medium">
+                                <tr class="hover:bg-purple-50 transition-colors border-b border-gray-100">
+                                    <td class="p-4 font-bold text-gray-900 bg-gray-50/50">৫ বছর</td>
+                                    <td class="p-4">২৪০ / ৬০</td>
+                                    <td class="p-4">৩৪০৳</td>
+                                    <td class="p-4 font-bold text-purple-700 bg-purple-50/30">১,৩৬০৳</td>
+                                    <td class="p-4">৮১,৬০০৳</td>
+                                    <td class="p-4 font-bold text-green-600">+১৮,৪০০৳</td>
+                                    <td class="p-4 font-black bg-green-50 text-gray-900 text-lg">১,০০,০০০৳</td>
+                                </tr>
+                                <tr class="hover:bg-purple-50 transition-colors border-b border-gray-100">
+                                    <td class="p-4 font-bold text-gray-900 bg-gray-50/50">৭ বছর</td>
+                                    <td class="p-4">৩৩৬ / ৮৪</td>
+                                    <td class="p-4">২২০৳</td>
+                                    <td class="p-4 font-bold text-purple-700 bg-purple-50/30">৮৮০৳</td>
+                                    <td class="p-4">৭৩,৯২০৳</td>
+                                    <td class="p-4 font-bold text-green-600">+২৬,০৮০৳</td>
+                                    <td class="p-4 font-black bg-green-50 text-gray-900 text-lg">১,০০,০০০৳</td>
+                                </tr>
+                                <tr class="hover:bg-purple-50 transition-colors">
+                                    <td class="p-4 font-bold text-gray-900 bg-gray-50/50">১০ বছর</td>
+                                    <td class="p-4">৪৮০ / ১২০</td>
+                                    <td class="p-4">১৩০৳</td>
+                                    <td class="p-4 font-bold text-purple-700 bg-purple-50/30">৫২০৳</td>
+                                    <td class="p-4">৬২,৪০০৳</td>
+                                    <td class="p-4 font-bold text-green-600">+৩৭,৬০০৳</td>
+                                    <td class="p-4 font-black bg-green-50 text-gray-900 text-lg">১,০০,০০০৳</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+ 
+            <!-- Loan section -->
+            <div id="loan" class="faq-item bg-white p-8 rounded-3xl shadow-lg mb-8 border-2 border-transparent hover:border-red-500 transition-all duration-300">
+                <div class="bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100">
+            
+                    <div class="bg-gradient-to-r from-red-700 to-red-600 p-6 text-center">
+                        <h2 class="text-2xl md:text-3xl font-extrabold text-white mb-2">শক্তি ফাউন্ডেশনের ঋণের তথ্য</h2>
+                        <div class="h-1 w-24 bg-yellow-400 mx-auto rounded-full"></div>
+                    </div>
+            
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-gray-50 text-red-700 uppercase text-lg">
+                                    <th class="p-4 border-b font-bold">ঋণের নাম ও উদ্দেশ্য</th>
+                                    <th class="p-4 border-b font-bold text-center">ঋণের পরিমাণ (টাকা)</th>
+                                    <th class="p-4 border-b font-bold text-center">সার্ভিস চার্জ <br><small class="text-gray-400">(ক্রমহ্রাসমান)</small></th>
+                                    <th class="p-4 border-b font-bold text-center">কিস্তির ধরন</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-700">
+                                <tr class="hover:bg-red-50 transition-colors">
+                                    <td class="p-4 border-b">
+                                        <span class="font-bold text-lg block text-red-600">জাগরণ</span>
+                                        <span class="text-xs text-gray-500 italic">ক্ষুদ্র ব্যবসা, কৃষি ও আয়বর্ধক কার্যক্রম</span>
+                                    </td>
+                                    <td class="p-4 border-b text-center font-medium">৩০,০০০ — ৯০,০০০</td>
+                                    <td class="p-4 border-b text-center">২৪% 
+                                    </td>
+                                    <td class="p-4 border-b text-center">সাপ্তাহিক/মাসিক</td>
+                                </tr>
+            
+                                <tr class="hover:bg-red-50 transition-colors">
+                                    <td class="p-4 border-b">
+                                        <span class="font-bold text-lg block text-red-600">অগ্রসর</span>
+                                        <span class="text-xs text-gray-500 italic">ক্ষুদ্র উদ্যোক্তা উন্নয়ন ও ব্যবসা সম্প্রসারণ</span>
+                                    </td>
+                                    <td class="p-4 border-b text-center font-medium">১ লক্ষ — ২০ লক্ষ</td>
+                                    <td class="p-4 border-b text-center">২৪%</td>
+                                    <td class="p-4 border-b text-center">সাপ্তাহিক/মাসিক</td>
+                                </tr>
+            
+                                <tr class="hover:bg-red-50 transition-colors">
+                                    <td class="p-4 border-b">
+                                        <span class="font-bold text-lg block text-red-600">সুফলন</span>
+                                        <span class="text-xs text-gray-500 italic">প্রশিক্ষিত তরুণ ও বেকার যুবকদের ব্যবসা ও আত্মকর্মসংস্থান</span>
+                                    </td>
+                                    <td class="p-4 border-b text-center font-medium">২০,০০০ — ৯০,০০০</td>
+                                    <td class="p-4 border-b text-center">২৪%</td>
+                                    <td class="p-4 border-b text-center">সাপ্তাহিক/মাসিক</td>
+                                </tr>
+            
+                                <tr class="hover:bg-red-50 transition-colors">
+                                    <td class="p-4 border-b">
+                                        <span class="font-bold text-lg block text-red-600">সেলারী</span>
+                                        <span class="text-xs text-gray-500 italic">উদ্যোক্তা সম্প্রসারণ ও আয় পুনরুদ্ধার কার্যক্রম</span>
+                                    </td>
+                                    <td class="p-4 border-b text-center font-medium">১ লক্ষ — ১০ লক্ষ</td>
+                                    <td class="p-4 border-b text-center">২৪%</td>
+                                    <td class="p-4 border-b text-center">সাপ্তাহিক/মাসিক</td>
+                                </tr>
+            
+                                <tr class="hover:bg-red-50 transition-colors">
+                                    <td class="p-4 border-b">
+                                        <span class="font-bold text-lg block text-red-600">রেমিটেন্স</span>
+                                        <span class="text-xs text-gray-500 italic">প্রবাসী পরিবারের আর্থিক সহায়তা</span>
+                                    </td>
+                                    <td class="p-4 border-b text-center font-medium">১ লক্ষ — ২০ লক্ষ</td>
+                                    <td class="p-4 border-b text-center">২৪%</td>
+                                    <td class="p-4 border-b text-center">সাপ্তাহিক/মাসিক</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+            
+                    <div class="bg-gray-50 p-4 text-center">
+                        <p class="text-sm text-gray-600 italic">** সকল ঋণের মেয়াদ ১২ থেকে ১৮ মাস পর্যন্ত হতে পারে।</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    <script>
+        function searchFAQ() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let items = document.getElementsByClassName('faq-item');
+
+            for (let i = 0; i < items.length; i++) {
+                let content = items[i].innerText.toLowerCase();
+                if (content.includes(input)) {
+                    items[i].style.display = "";
+                } else {
+                    items[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+    </main>
+
+        <footer class="bg-gray-800 text-gray-400 py-6 text-center">
+        <p>&copy; 2026 শক্তি ফাউন্ডেশন | নারী ক্ষমতায়নে শক্তি</p>
+    </footer>
+
+    <script>
+        // Simple search function for demo
+        function searchFAQ() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let items = document.getElementsByClassName('faq-item');
+            
+            for (let i = 0; i < items.length; i++) {
+                if (items[i].innerText.toLowerCase().includes(input)) {
+                    items[i].style.display = "block";
+                } else {
+                    items[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ঋণ ও কিস্তি বিস্তারিত</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --bg-light: #f8fafc;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --white: #ffffff;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background-color: var(--bg-light);
+            padding: 40px 20px;
+            color: var(--text-main);
+        }
+
+        .details-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .info-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border);
+            transition: transform 0.2s;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 12px;
+        }
+
+        .card-header h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        /* Installment Table Styling */
+        .installment-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .inst-item {
+            background: var(--bg-light);
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .inst-term {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .inst-val {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        /* List Styling */
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .feature-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .details-wrapper { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="details-wrapper">
+        
+        <div class="info-card">
+            <div class="card-header">
+                <h2>কিস্তি ও সঞ্চয় পদ্ধতি</h2>
+            </div>
+            <span class="badge">মাসিক কিস্তি আদায়</span>
+            
+            <h4 style="margin-bottom: 10px;">কিস্তির হার (প্রতি ১০০০ টাকায়)</h4>
+            <div class="installment-grid">
+                <div class="inst-item"><span class="inst-term">০৯ মাস</span><span class="inst-val">১২৫ টাকা</span></div>
+                <div class="inst-item"><span class="inst-term">১২ মাস</span><span class="inst-val">৯৫ টাকা</span></div>
+                <div class="inst-item"><span class="inst-term">১৫ মাস</span><span class="inst-val">৭৮ টাকা</span></div>
+                <div class="inst-item"><span class="inst-term">১৮ মাস</span><span class="inst-val">৬৭ টাকা</span></div>
+                <div class="inst-item" style="grid-column: span 2;"><span class="inst-term">২৪ মাস</span><span class="inst-val">৫৩ টাকা</span></div>
+            </div>
+
+            <h4 style="margin-top: 20px; margin-bottom: 10px;">সঞ্চয় নীতিমালা</h4>
+            <ul class="feature-list">
+                <li>বিতরণের পূর্বে <b>৫% সঞ্চয়</b> থাকা বাধ্যতামূলক।</li>
+                <li>১০% ব্যালেন্স রেখে সমন্বয় বা উত্তোলন করা যাবে।</li>
+            </ul>
+        </div>
+
+        <div class="info-card">
+            <div class="card-header">
+                <h2>ঋণের জামিনদার সংক্রান্ত</h2>
+            </div>
+            <ul class="feature-list">
+                <li>ঋণের জন্য অবশ্যই <b>একজন জামিনদার</b> থাকতে হবে।</li>
+                <li>জামিনদারকে বর্তমান কর্মস্থলের <b>সহকর্মী</b> (সমপর্যায় বা উচ্চপদস্থ) হতে হবে।</li>
+                <li>বিভাগীয় প্রধানের ক্ষেত্রে অধঃস্তন সহকর্মী জামিনদার হতে পারবেন (যদি আয় পর্যাপ্ত হয়)।</li>
+                <li>পারিবারিক অভিভাবকের সম্মতি ও গ্যারান্টি বাধ্যতামূলক।</li>
+            </ul>
+            <div style="background: #fff4e5; padding: 12px; border-radius: 8px; border-left: 4px solid #ff9800; font-size: 0.85rem; margin-top: 15px;">
+                <strong>নোট:</strong> ঋণ সিলিং এর উপর সঞ্চয় আদায়ের নীতিমালা অনুযায়ী কিস্তি নির্ধারিত হবে।
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

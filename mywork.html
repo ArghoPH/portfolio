@@ -1,105 +1,380 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio - Argho Chakma</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/mywork.css">
-</head>
-<body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Argho Chakma</title>
 
-<!-- NAVBAR -->
-<nav>
-    <a href="index.html"><h3>Argho Chakma</h3></a>
-    <ul>
-        <li><a href="index.html#home">Home</a></li>
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="portfolio.html" class="active">Portfolio</a></li>
-        <li><a href="index.html#services">Services</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-    </ul>
-</nav>
+    <script src="https://cdn.tailwindcss.com"></script>
 
-<!-- PAGE HEADER -->
-<div class="page-header">
-    <h1>My Portfolio</h1>
-    <p>A collection of my recent design and development work</p>
-</div>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<!-- FILTERS -->
-<div class="filters">
-    <button class="active" onclick="filterProjects('all')">All</button>
-    <button onclick="filterProjects('Web Design')">Web Design</button>
-    <button onclick="filterProjects('UI/UX')">UI/UX</button>
-    <button onclick="filterProjects('Mobile App')">Mobile App</button>
-</div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<!-- PORTFOLIO GRID -->
-<div class="portfolio-grid" id="portfolioGrid">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="projects-data.js"></script>
 
-    <div class="portfolio-card" data-category="Web Design">
-        <img src="https://via.placeholder.com/400x300">
-        <div class="portfolio-content">
-            <h3>ERP Dashboard</h3>
-            <p>Comprehensive analytics dashboard with real-time visualization.</p>
-            <div class="tags">
-                <span>Vue.js</span>
-                <span>ASP.NET</span>
-            </div>
-            <a href="projects/erp.html" class="btn">View Project</a>
-        </div>
-    </div>
-
-    <div class="portfolio-card" data-category="Mobile App">
-        <img src="https://via.placeholder.com/400x300">
-        <div class="portfolio-content">
-            <h3>Mobile App Design</h3>
-            <p>Modern e-commerce mobile application design.</p>
-            <div class="tags">
-                <span>Figma</span>
-                <span>Prototype</span>
-            </div>
-            <a href="#" class="btn">View Project</a>
-        </div>
-    </div>
-
-    <div class="portfolio-card" data-category="UI/UX">
-        <img src="https://via.placeholder.com/400x300">
-        <div class="portfolio-content">
-            <h3>ERP Software UI</h3>
-            <p>User-centered financial management system interface.</p>
-            <div class="tags">
-                <span>UI/UX</span>
-                <span>Responsive</span>
-            </div>
-            <a href="#" class="btn">View Project</a>
-        </div>
-    </div>
-
-</div>
-
-<!-- FILTER SCRIPT -->
-<script>
-function filterProjects(category){
-    const cards = document.querySelectorAll('.portfolio-card');
-    cards.forEach(card=>{
-        if(category==='all' || card.dataset.category===category){
-            card.style.display='block';
-        } else {
-            card.style.display='none';
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
         }
-    });
 
-    // active button
-    document.querySelectorAll('.filters button').forEach(btn=> btn.classList.remove('active'));
-    event.target.classList.add('active');
-}
-</script>
+        /* Glass Card */
 
-<footer>
-    © 2026 Argho Chakma. All rights reserved.
-</footer>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Floating animation */
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(-15px)
+            }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .animate-float-delayed {
+            animation: float 6s ease-in-out infinite;
+            animation-delay: 2s;
+        }
+
+        /* Perspective */
+
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+    </style>
+
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- NAVBAR -->
+
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+            <a href="index.html" class="text-xl font-bold text-gray-800">
+                Argho Chakma
+            </a>
+
+            <ul class="hidden md:flex space-x-6 font-medium">
+                <li><a href="index.html#home" class="hover:text-indigo-600">Home</a></li>
+                <li><a href="index.html#about" class="hover:text-indigo-600">About</a></li>
+                <li><a href="index.html#services" class="hover:text-indigo-600">Services</a></li>
+                <li><a href="index.html#contact" class="hover:text-indigo-600">Contact</a></li>
+                <li><a href="portfolio.html" class="text-indigo-600 font-semibold">Portfolio</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <!-- HERO HEADER -->
+
+    <header
+        class="relative bg-gradient-to-br from-blue-700 via-[#0d5c8a] to-emerald-900 overflow-hidden pb-28 pt-24 md:pb-36">
+
+        <div class="absolute inset-0 opacity-10"
+            style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size:32px 32px;">
+        </div>
+        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-green-500 rounded-full blur-[100px] opacity-40">
+        </div>
+        <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-blue-600 rounded-full blur-[100px] opacity-60">
+        </div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+
+            <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+
+                <!-- LEFT CONTENT -->
+
+                <div class="w-full md:w-1/2 text-center md:text-left">
+
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-emerald-300 font-semibold text-sm mb-6 backdrop-blur-sm">
+
+                        <span class="relative flex h-3 w-3">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                        </span>
+
+                        Online 
+
+                    </div>
+
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight">
+
+                        Argho<br>
+
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500">
+
+                            Chakma
+
+                        </span>
+
+                    </h1>
+
+                    <p class="text-lg md:text-xl text-blue-100 mb-8 max-w-lg mx-auto md:mx-0">
+
+                        A collection of my recent design and development work
+
+                    </p>
+
+                    <!-- SEARCH -->
+
+                    <div class="relative max-w-xl mx-auto md:mx-0">
+
+                        <div
+                            class="flex items-center bg-white rounded-full shadow-xl overflow-hidden p-1 border-2 border-white">
+
+                            <div class="pl-4 text-gray-400">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+
+                            <input type="text" id="searchInput" onkeyup="searchFAQ()"
+                                placeholder="Search for services, projects, or topics..."
+                                class="w-full py-3 px-4 text-gray-700 bg-transparent focus:outline-none">
+
+                            <button onclick="document.getElementById('searchInput').value='';searchFAQ()"
+                                class="pr-4 text-gray-300 hover:text-red-400">
+
+                                <i class="fa-solid fa-circle-xmark"></i>
+
+                            </button>
+
+                            <button onclick="searchFAQ();scrollToResults()"
+                                class="bg-blue-700 hover:bg-blue-900 text-white px-6 py-3 rounded-full font-bold">
+
+                                Search
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="mt-4 flex gap-4 justify-center md:justify-start text-sm text-blue-200">
+
+                        <span>Popular:</span>
+
+                        <a href="#" class="hover:text-white underline">Software</a>
+                        <a href="#" class="hover:text-white underline">Website</a>
+                        <a href="#" class="hover:text-white underline">UI</a>
+
+                    </div>
+
+                </div>
+
+                <!-- RIGHT FLOATING CARDS -->
+
+                <div class="w-full md:w-1/2 relative h-[400px] hidden md:block perspective-1000">
+
+                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-80 glass-card rounded-3xl p-6 shadow-2xl animate-float flex flex-col justify-center items-center text-center">
+                        <div class="w-24 h-24 bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-full flex items-center justify-center mb-6">
+                            <i class="fa-solid fa-laptop-code text-5xl text-blue-900"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Front End Development</h3>
+                        <p class="text-blue-100 text-sm">
+                            Building responsive and interactive websites using HTML, CSS, and JavaScript
+                        </p>
+                    </div>
+
+                    <div
+                        class="absolute top-10 right-4 glass-card px-6 py-4 rounded-2xl shadow-xl animate-float-delayed flex items-center gap-4">
+                    
+                        <div class="bg-indigo-600 p-3 rounded-xl">
+                            <i class="fa-solid fa-paint-brush text-white"></i>
+                        </div>
+                    
+                        <div>
+                            <div class="text-white font-bold">UI/UX</div>
+                            <div class="text-blue-200 text-xs">User Interface and User Experience Design</div>
+                        </div>
+                    
+                    </div>
+
+                    <div
+                        class="absolute bottom-10 left-0 glass-card px-6 py-4 rounded-2xl shadow-xl animate-float flex items-center gap-4">
+
+                        <div class="bg-blue-500 p-3 rounded-xl">
+                            <i class="fa-solid fa-shield-halved text-white"></i>
+                        </div>
+
+                        <div>
+                            <div class="text-white font-bold">100% devivery</div>
+                            <div class="text-blue-200 text-xs">Guaranteed delivery of high-quality work</div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
+            <svg class="relative block w-[calc(100%+1.3px)] h-[50px] md:h-[80px]" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,121.22,190.61,109.52Z"
+                    class="fill-slate-50"></path>
+            </svg>
+        </div>
+
+    </header>
+
+    <script>
+
+        /**
+         * Smoothly scrolls to the FAQ section.
+         * @return {undefined}
+         */
+        function scrollToResults() {
+            document.getElementById("faqContainer")?.scrollIntoView({
+                behavior: "smooth"
+            })
+        }
+
+        /**
+         * Searches for FAQs that match the search input.
+         * @return {undefined}
+         */
+        function searchFAQ() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const items = document.getElementsByClassName('faq-item');
+
+            for (let i = 0; i < items.length; i++) {
+                const content = items[i].innerText.toLowerCase();
+                if (content.includes(input)) {
+                    items[i].style.display = "";
+                } else {
+                    items[i].style.display = "none";
+                }
+            }
+        }
+
+    </script>
+
+
+    <!-- FILTERS -->
+    <div id="app">
+        <section class="py-10">
+            <div class="max-w-7xl mx-auto px-6 text-center">
+                <div class="flex flex-wrap justify-center gap-4">
+
+                    <button v-for="btn in filters" :key="btn" @click="activeFilter = btn" :class="[
+                    'px-6 py-2 rounded-full transition',
+                    activeFilter === btn ? 'bg-indigo-600 text-white' : 'bg-gray-200 hover:bg-indigo-600 hover:text-white'
+                ]">
+                        {{ btn }}
+                    </button>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PORTFOLIO GRID -->
+        <section class="pb-20">
+            <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolioGrid">
+
+                <div v-for="project in filteredProjects" :key="project.id" :data-category="project.category"
+                    class="portfolio-card bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden">
+                    <img :src="project.image" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">{{ project.title }}</h3>
+                        <p class="text-gray-600 mb-4">{{ project.description }}</p>
+
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span v-for="tech in project.technologies" :key="tech.name"
+                                :class="getTechColor(tech.name) + ' text-sm px-3 py-1 rounded-full font-semibold'">
+                                {{ tech.name }}
+                            </span>
+                        </div>
+
+                        <a :href="project.link"
+                            class="inline-block bg-indigo-600 text-white px-5 py-2 rounded-lg hover:bg-indigo-700 transition">
+                            View Project
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+        createApp({
+            data() {
+                return {
+                    activeFilter: 'All',
+                    filters: projectFilters,
+                    projects: projects
+                };
+            },
+            computed: {
+                filteredProjects() {
+                    if (this.activeFilter === 'All') return this.projects;
+                    return this.projects.filter(p => p.category === this.activeFilter);
+                }
+            },
+            methods: {
+                getTechColor(techName) {
+                    const techColors = {
+                        "Figma": "bg-purple-100 text-purple-600",
+                        "Wireframing": "bg-purple-100 text-purple-600",
+                        "User Flow": "bg-green-100 text-green-600",
+                        "Responsive": "bg-green-100 text-green-600",
+                        "Vue.js": "bg-blue-100 text-blue-600",
+                        "JavaScript": "bg-yellow-100 text-yellow-600",
+                        "JavaScript (ES6+)": "bg-yellow-100 text-yellow-600",
+                        "HTML5": "bg-emerald-100 text-emerald-600",
+                        "CSS3": "bg-purple-100 text-purple-600",
+                        "ASP.NET": "bg-purple-100 text-purple-600",
+                        "Python": "bg-indigo-100 text-indigo-600",
+                        "PHP": "bg-orange-100 text-orange-600",
+                        "MySQL": "bg-blue-100 text-blue-600",
+                        "MongoDB": "bg-green-100 text-green-600",
+                        "API": "bg-emerald-100 text-emerald-700",
+                        "REST": "bg-lime-100 text-lime-700",
+                        "Security": "bg-red-100 text-red-600",
+                        "Responsive Design": "bg-green-100 text-green-600",
+                        "User-Centered Design": "bg-yellow-100 text-yellow-600",
+                        "Color Theory": "bg-pink-100 text-pink-600",
+                        "Typography": "bg-blue-100 text-blue-600",
+                        "Color Palettes": "bg-pink-100 text-pink-600",
+                        "Design Systems": "bg-purple-100 text-purple-600",
+                        "UI/UX Principles": "bg-violet-100 text-violet-700",
+                        "Interaction Design": "bg-emerald-50 text-emerald-600",
+                        "Prototyping": "bg-orange-100 text-orange-600",
+                        "user research": "bg-yellow-100 text-yellow-600",
+                        "Usability Testing": "bg-yellow-100 text-yellow-600",
+                        "Front-End": "bg-orange-100 text-red-600",
+                    };
+                    return techColors[techName] || "bg-gray-100 text-gray-600";
+                }
+            }
+        }).mount('#app');
+    </script>
+
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-white text-center py-6">
+        © 2026 Argho Chakma. All rights reserved.
+    </footer>
 
 </body>
+
 </html>
